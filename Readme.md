@@ -1,7 +1,7 @@
 # Личный проект «Нёрдс»
 
 * Студент: [Mary Tsigler](https://up.htmlacademy.ru/htmlcss/30/user/1033353).
-* Наставник: `[Натали Белоева](https://htmlacademy.ru/profile/id1123699)`.
+* Наставник: [Натали Белоева](https://htmlacademy.ru/profile/id1123699).
 
 ---
 
