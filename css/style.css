@@ -135,6 +135,10 @@ img{
 	color: var(--basis-text-active);
 	opacity: 0.3;
 }
+.navigation-current{
+	border-bottom: 2px solid var(--main-accent-normal);
+	padding-bottom: 13px;
+}
 
 /* Главный слайдер  */
 
@@ -405,7 +409,6 @@ img{
 	box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 	color: rgba(0,0,0,0.3);
 }
-
 
 /*
 
