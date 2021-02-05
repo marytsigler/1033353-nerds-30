@@ -394,6 +394,8 @@ img{
 .filter-sort-link:active{
 	opacity: 1.0;
 }
+/*Кнопка фильтра Показать */
+
 .button-filter{
 	background-color: var(--show-button-normal);
 	color: var(--basic-text-black);
@@ -409,17 +411,6 @@ img{
 	box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 	color: rgba(0,0,0,0.3);
 }
-
-/*
-
-<input class="button button-filter" type="submit" value="Показать">
-
-
-.radio-button-checked{
-	
-	background-color: var(--radio-normal);
-	
-}*/
 
 /*Стрелки  вниз вверх */
 
@@ -449,6 +440,7 @@ img{
 }
 
 /*Шаблоны*/
+
 .catalog-item{
 	border-radius: 5px;
 }
@@ -469,14 +461,32 @@ img{
 	text-decoration: none;
 	color:var(--basic-text-black);
 }
+.catalog-card-link:hover{
+	color:var(--main-accent-normal);
+}
+.catalog-card-link:active{
+	color: rgba(0,0,0,0.3);
+}
+
 .catalog-card-info{
 	line-height: 18px;
 	color: var(--card-text);
 }
+/*Кнопка в карточке с ценой*/
+
 .card-button{
 	width: 200px;
 	padding: 17px 72px 15px;
 }
+.card-button:hover{
+	background-color: var(--main-accent-hover);
+}
+.card-button:active{
+	background-color: var(--main-accent-active);
+}
+
+/*-- 1 2 3 Следующая*/
+
 .pagination-list{
 	list-style: none;
 
