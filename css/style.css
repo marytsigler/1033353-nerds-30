@@ -1,8 +1,9 @@
 	/* Variables*/
 :root{
 
-	/* INDEX*/
-	/* Text*/
+	/* ИНДЕКС ЦВЕТА*/
+
+	/* Текст*/
 
 --basic-text-black:#000000;
 --basic-text-medium:#283136;
@@ -10,10 +11,10 @@
 --basic-text-white:#FFFFFF;
 --additional-text:#444444;
 
-	/* Logo*/
+	/* Логотип */
 --logo-active:#A6A6A6;
 
-	/* Navigation*/
+	/* Навигация*/
 
 --basis-text-hover:#FB565A;
 --basis-text-active:#000000; /* + Opacity 0.3*/
@@ -27,6 +28,8 @@
 --icon-topdown-active:#231F20; /*opacity: 0.3;*/
 --icon-topdown-hover:#231F20; /*opacity: 0.6;*/
 --icon-topdown:#000000; 
+
+--background-normal:#EEEEEE;
 
 
 
@@ -46,7 +49,7 @@
 
 
 
-	/* Button red, green, yellow*/
+	/* Кнопки красная , зеленая желтая*/
 
 --main-accent-normal:#FB565A;
 --main-accent-hover:#E74246;
@@ -60,18 +63,22 @@
 --additional-accent-hover2:#EAB534;
 --additional-accent-active2:#E5A722;
 
-	/* CATALOG*/
+
+	/* КАТАЛОГ ЦВЕТА*/
 	
-	/* Grey button + input*/
+	/* Кнопка серая +  инпуты*/
 
 --show-button-normal:#EEEEEE;
 --show-button-hover:#DFDFDF;
 --show-button-aktive:#D5D5D5;
 
 }
-
-
-body{
+/* ГЛАВНАЯ СТРАНИЦА*/
+img{
+	max-width: 100%;
+	height: auto;
+}
+.page-body{
 	min-width: 1160px;
 	padding: 0;
 	margin:0;
@@ -81,11 +88,18 @@ body{
 	line-height: 24px;
 	color: var(--basic-text-medium);
 	background: var(--basic-text-white);
+
+	min-height: 100%;
+	display: grid;
+	grid-template-rows:	/*Ряды: */
+		min-content   		/*шапка*/
+		1fr 				/*весь контент*/
+		min-content;		/*футер*/
 }
-img{
-	max-width: 100%;
-	height: auto;
+.page{
+	height:100%;
 }
+
 .h3{
 	font-size: 24px;
 	line-height: 30px;
@@ -103,20 +117,39 @@ img{
 
 /* Навигация */
 
-.main-header, .offer-slider, .section-title{	
+.main-header, .slider-background{	
 	background-color:var(--background-normal);
 }
-.main-nav{
+
+.main-navigation{
+	display: grid;		/* Cетка для всей шапки */
 	font-size: 16px;
 	line-height: 30px;
 	font-weight: 500;
 	color: var(--basic-text-black);
+	background-color:var(--background-normal);
 }
+.main-nav-wrap{			
+	display: grid;	/* Cетка для навигации */
+	grid-template-columns: 1fr 1fr min-content;
+	width: 1160px;
+	margin:0 auto;
+}
+/*  Контейнер*/
+
+.container{
+	width: 1160px;
+	margin: 0 auto;
+}
+
 .main-header-logo:hover .logotip{    /* при наведении картинка в ссылке меняет прозрачность */
 	opacity: 0.7;
 }
 .main-header-logo:active .logotip{    /* картинка в ссылке меняет прозрачность */
 	opacity: 0.3;
+}
+.logotip{
+	margin-bottom: 78px;
 }
 .navigation-item a{  
 	text-decoration: none;
@@ -124,9 +157,12 @@ img{
 }
 .navigation-list{
 	list-style: none;
+	margin:0;
+	padding:0;
 }
 .navigation-item a{
 	color: var(--basic-text-black);
+	text-transform: uppercase;
 }
 .navigation-item a:hover{
 	color: var(--basis-text-hover);
@@ -134,6 +170,10 @@ img{
 .navigation-item a:active{
 	color: var(--basis-text-active);
 	opacity: 0.3;
+}
+.navigation-link{
+	display: inline-block;
+
 }
 .navigation-current{
 	border-bottom: 2px solid var(--main-accent-normal);
@@ -152,27 +192,38 @@ img{
 	border: 0;
 	clip: rect(0 0 0 0);
 }
-.offer-slider-box1{
+.offer-slider-box{
+	background-repeat: no-repeat;
+	background-position: right;
+	height: 431px;
+}
+
+.slider-1{
 	background-image: url(../img/nerds-index-slide1.png);
-	background-repeat: no-repeat;
-	background-position: right;
+	
 }
-.offer-slider-box2{
+.slider-2{
 	background-image: url(../img/nerds-index-slide2.png);
-	background-repeat: no-repeat;
-	background-position: right;
 }
-.offer-slider-box3{
+
+.slider-3{
 	background-image: url(../img/nerds-index-slide3.png);
-	background-repeat: no-repeat;
-	background-position: right;
+
 }
 .offer-title{
 	font-size: 55px;
 	line-height: 55px;
 	font-weight: 500;
 	color: var(--basic-text-black);
+	margin: 0;
+	margin-bottom: 25px;
+	width: 450px;
 } 
+.offer-text{
+	margin-top:25px ;
+	margin-bottom: 55px;
+	/* как сделать отступ вверз если line height 55px? */
+}
 
 /* Кнопка  */
 
@@ -191,15 +242,14 @@ img{
 	vertical-align: middle;
 	text-decoration: none;
 	text-transform: uppercase;
-
 }
+
 /* Кнопка при наведении и клике */
 
 .offer-button:hover{
 	background-color: var(--main-accent-hover);
 }
 .offer-button:active{ 	/* шрифт белый полупрозрачный */
-	
 	color: rgba(255,255,255,0.3);
  	background-color: var(--main-accent-active);
 }
@@ -207,12 +257,24 @@ img{
 
 /* Услуги  */
 
+.services{
+	padding-top: 80px;
 
+}
 .services-list{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap:100px;
 	list-style:none;
+	margin: 0; 
+	padding: 0;
 }
 .services-item{
 	text-align: left;
+}
+.service-info{
+	margin-top: 16px;
+	margin-bottom: 49px;
 }
 .services-button{
 	padding: 17px 40px 15px 39px;
@@ -226,7 +288,7 @@ img{
 	background-color: var(--additional-accent-normal2);
 }
 
-/*  btn hover and active  */
+/*  Кнопки при наведении */
 
 .service-btn-red:hover{
 	background-color: var(--main-accent-hover);
@@ -252,8 +314,11 @@ img{
 
 
 
-/* About  */
-
+/* О нас  */
+.about{
+	padding-top:73px;
+	padding-bottom: 73px;
+}
 
 .about-title{
 	font-size: 45px;
@@ -281,26 +346,42 @@ img{
 	font-weight: 700;
 	left: -10px;   	
 }
+
+
+/* Партнеры  */
+
+.partners{
+	padding-top: 46px;
+	padding-bottom:44px;
+}
 .partners-list{
 	list-style:none; 
+
 }
 .partners-item-link{    
  	opacity: 0.2;
- }
-
+}
 .partners-item-link:hover{   
-   opacity: 1.0;
+   opacity: 1;
 
 }
 .partners-item-link:active{   
  	opacity: 0.1;
 }
 
+/* Футер  */
+	
+.main-footer{
+	padding-top: 80px;
+	padding-bottom: 74px;
+}
 .footer-contacts{
+
 	font-style: normal;
 	font-size: 16px;
 	line-height: 18px;
 	color: var(--basic-text-light);
+
 }
 .footer-contacts-name{
 	font-size: 18px;
@@ -338,7 +419,6 @@ img{
 	border-radius:50%;
 	display: inline-block;
 	background: var(--icon-normal);
-
 }
 .footer-socials-link:hover{
 	background: var(--icon-hover);
@@ -347,6 +427,7 @@ img{
 	background: var(--icon-active);
 	box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 }
+
 .footer-text{
 	font-size: 36px;
 	line-height: 36px;
@@ -358,8 +439,12 @@ img{
 	line-height: 22px;
 	color: var(--additional-text);
 }
+.footer-info-box{
+	padding-top: 75px;
+}
 
-/* Каталог */
+
+/* КАТАЛОГ */
 
 .filter-title{
 	font-size: 18px;
@@ -373,6 +458,7 @@ img{
 }
 .filter-inputs-label{
 	line-height: 22px;
+	text-transform: uppercase;
 }
 .filter-list{
 	list-style-type:none;
@@ -385,6 +471,7 @@ img{
 	font-size: 14px;
 	line-height: 18px;
 	text-decoration: none;
+	text-transform: uppercase;
 	color: var(--basic-text-black);
 	opacity: 0.3;
 }
@@ -392,7 +479,7 @@ img{
 	opacity: 0.6;
 }
 .filter-sort-link:active{
-	opacity: 1.0;
+	opacity: 1;
 }
 /*Кнопка фильтра Показать */
 
@@ -436,7 +523,7 @@ img{
 	opacity: 0.6;
 }
 .direction-icon:active{
-	opacity: 1.0;
+	opacity: 1;
 }
 
 /*Шаблоны*/
@@ -454,6 +541,7 @@ img{
 .catalog-list{
 	list-style: none;
 }
+/* Карточки инфо*/
 .catalog-card{
 	text-align: center;
 }
@@ -499,6 +587,7 @@ img{
 	text-decoration: none;
 	color:var(--basic-text-black);
 	border-radius: 3px;
+	text-transform: uppercase;
 	background-color:var(--pagination-background-normal);
 }
 .pagination-link:hover{
@@ -509,7 +598,6 @@ img{
 	box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 	color: rgba(0,0,0,0.3);
 }
-
 .pagination-link-current{
 	text-decoration: none;
 	color:var(--basic-text-black);
