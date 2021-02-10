@@ -78,10 +78,13 @@ img{
 	max-width: 100%;
 	height: auto;
 }
+* , *::before, *::after {	/*Для всех элементов сделать! */
+    box-sizing: border-box
+}
 .page-body{
 	min-width: 1160px;
 	padding: 0;
-	margin:0;
+	margin: 0;
 	font-family: 'Roboto','Arial', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -101,6 +104,8 @@ img{
 }
 
 .h3{
+	margin:0;
+	padding-bottom: 16px;
 	font-size: 24px;
 	line-height: 30px;
 	font-weight: 700;
@@ -112,6 +117,10 @@ img{
 	font-size: 55px;
 	line-height: 55px;
 	color: var(--basic-text-black);
+	text-align: center;
+	/*padding-top: 87px;*/
+	margin: 0;
+	margin-bottom: 149px;
 	
 }
 
@@ -119,46 +128,52 @@ img{
 
 .main-header, .slider-background{	
 	background-color:var(--background-normal);
+	
 }
+ .slider-background{
+ 	margin-bottom: 80px;
+ }
 
-.main-navigation{
-	display: grid;		/* Cетка для всей шапки */
-	font-size: 16px;
-	line-height: 30px;
-	font-weight: 500;
-	color: var(--basic-text-black);
-	background-color:var(--background-normal);
-}
-.main-nav-wrap{			
-	display: grid;	/* Cетка для навигации */
-	grid-template-columns: 1fr 1fr min-content;
-	width: 1160px;
-	margin:0 auto;
-}
 /*  Контейнер*/
 
 .container{
 	width: 1160px;
 	margin: 0 auto;
 }
-
+.main-navigation{
+	display: flex;
+	justify-content: space-between;
+	font-size: 16px;
+	line-height: 30px;
+	font-weight: 500;
+	color: var(--basic-text-black);
+	background-color:var(--background-normal);
+}
+.main-header-logo{
+	margin-top: 49px;
+	margin-right: 202px;
+}
 .main-header-logo:hover .logotip{    /* при наведении картинка в ссылке меняет прозрачность */
 	opacity: 0.7;
 }
 .main-header-logo:active .logotip{    /* картинка в ссылке меняет прозрачность */
 	opacity: 0.3;
 }
-.logotip{
-	margin-bottom: 78px;
-}
+
 .navigation-item a{  
 	text-decoration: none;
 	color: var(--basic-text-black);
 }
 .navigation-list{
+	display: flex;
 	list-style: none;
 	margin:0;
 	padding:0;
+	margin-top: 75px;
+	margin-right: 246px;
+}
+.navigation-item:not(:last-child){
+	margin-right: 45px;
 }
 .navigation-item a{
 	color: var(--basic-text-black);
@@ -171,8 +186,8 @@ img{
 	color: var(--basis-text-active);
 	opacity: 0.3;
 }
-.navigation-link{
-	display: inline-block;
+.navigation-cart{
+	margin-top: 75px;
 
 }
 .navigation-current{
@@ -195,9 +210,8 @@ img{
 .offer-slider-box{
 	background-repeat: no-repeat;
 	background-position: right;
-	height: 431px;
+	padding:78px 0 80px 0;
 }
-
 .slider-1{
 	background-image: url(../img/nerds-index-slide1.png);
 	
@@ -208,7 +222,6 @@ img{
 
 .slider-3{
 	background-image: url(../img/nerds-index-slide3.png);
-
 }
 .offer-title{
 	font-size: 55px;
@@ -217,12 +230,12 @@ img{
 	color: var(--basic-text-black);
 	margin: 0;
 	margin-bottom: 25px;
-	width: 450px;
+	max-width: 450px;
 } 
 .offer-text{
-	margin-top:25px ;
+	max-width: 450px;
+	margin:0;
 	margin-bottom: 55px;
-	/* как сделать отступ вверз если line height 55px? */
 }
 
 /* Кнопка  */
@@ -234,12 +247,13 @@ img{
 	font-size: 16px;
 	line-height: 18px;
 	font-weight: 500;
-	width: 240px;
+	max-width: 240px;
 	height: 50px;
+	display: block;
+	border:none;
 	border-radius: 3px;
-	padding: 17px 54px 15px;
+	padding:17px 54px;
 	text-align: center;
-	vertical-align: middle;
 	text-decoration: none;
 	text-transform: uppercase;
 }
@@ -256,10 +270,8 @@ img{
 
 
 /* Услуги  */
-
 .services{
-	padding-top: 80px;
-
+	margin-bottom: 80px;
 }
 .services-list{
 	display: grid;
@@ -272,14 +284,17 @@ img{
 .services-item{
 	text-align: left;
 }
+.services-item img{
+	padding-bottom: 25px;
+}
 .service-info{
-	margin-top: 16px;
-	margin-bottom: 49px;
+	margin: 0;
+	padding-bottom: 32px;
 }
 .services-button{
-	padding: 17px 40px 15px 39px;
+	
+	padding: 17px 40px;
 	width: 160px;
-	height: 50px;
 }
 .service-btn-green{
 	background-color: var(--additional-accent-normal1);
@@ -315,29 +330,45 @@ img{
 
 
 /* О нас  */
-.about{
-	padding-top:73px;
-	padding-bottom: 73px;
-}
 
+.about-info-container{
+	margin-bottom: 73px;
+}
 .about-title{
+	margin:0;
 	font-size: 45px;
 	line-height: 45px;
 	font-weight: 500;
 	color: var(--basic-text-black);
+	margin-bottom: 32px;
+}
+.about-text{
+	margin: 0;
+	margin-bottom: 40px;
 }
 .about-description-subtitle{
+	margin:0;
 	font-weight: 700;
 	text-transform: uppercase;
+	margin-bottom: 23px;
 }
+.about-description-list{
+	margin: 0;
+	list-style: none;
+
+}
+.about-description-item:not(:last-child){
+	margin-bottom: 30px;
+}
+
 .table-numbers{
 	font-size: 45px;
 	line-height: 64px;
 	font-weight: 700;
+	padding-bottom: 10px;
 }
 
 .table-content{
-	font-size: 16px;
 	line-height: 18px;
 }
 .percent{
@@ -348,22 +379,20 @@ img{
 }
 
 
+
 /* Партнеры  */
 
 .partners{
-	padding-top: 46px;
-	padding-bottom:44px;
+	margin-bottom:44px;
 }
 .partners-list{
-	list-style:none; 
-
+	list-style:none;
 }
 .partners-item-link{    
  	opacity: 0.2;
 }
 .partners-item-link:hover{   
    opacity: 1;
-
 }
 .partners-item-link:active{   
  	opacity: 0.1;
@@ -372,27 +401,39 @@ img{
 /* Футер  */
 	
 .main-footer{
-	padding-top: 80px;
-	padding-bottom: 74px;
+	margin-bottom: 75px ;
 }
 .footer-contacts{
-
 	font-style: normal;
 	font-size: 16px;
 	line-height: 18px;
 	color: var(--basic-text-light);
-
 }
 .footer-contacts-name{
+
 	font-size: 18px;
 	line-height: 30px;
 	font-weight: 700;
 	text-transform: uppercase;
 	color: var(--basic-text-black);
+	margin:0;
+	margin-bottom: 23px;
+}
+.footer-contacts-address{
+	font-size: 16px;
+	line-height: 18px;
+	margin: 0;
+	margin-bottom: 18px;
+}
+.footer-phone-info{
+	margin: 0;
+	margin-bottom:38px;
 }
 .footer-contacts-phone{
 	text-decoration: none;
 	color: var(--basic-text-light);
+	margin:0;
+	cursor: pointer;
 }	
 .contacts-button{
 	width: 219px;
@@ -400,6 +441,7 @@ img{
 	padding: 17px 44px 15px;
 	border:0;
 	cursor: pointer;
+	margin-bottom: 44px;
 }
 .contacts-button:hover{
 	background-color: var(--main-accent-hover);
@@ -409,6 +451,7 @@ img{
  	background-color: var(--main-accent-active);
 }
 .footer-socials-list{
+	margin:0;
 	list-style:none;
 	display: flex;
 	flex-wrap: wrap;
@@ -427,25 +470,27 @@ img{
 	background: var(--icon-active);
 	box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 }
-
 .footer-text{
 	font-size: 36px;
 	line-height: 36px;
 	font-weight: 700;
 	color: var(--basic-text-black);
+	margin-bottom: 10px;
 }
 .footer-info{
 	font-size: 16px;
 	line-height: 22px;
 	color: var(--additional-text);
 }
-.footer-info-box{
-	padding-top: 75px;
-}
+
 
 
 /* КАТАЛОГ */
 
+
+.background {
+	background-color:var(--background-normal);
+}
 .filter-title{
 	font-size: 18px;
 	line-height: 30px;
