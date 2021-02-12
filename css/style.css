@@ -72,6 +72,11 @@
 --show-button-hover:#DFDFDF;
 --show-button-aktive:#D5D5D5;
 
+--scale-basic:#D7DCDF;
+--scale-progress:#00CA74;
+--toggle-background:#ABABAB;
+
+
 }
 /* ГЛАВНАЯ СТРАНИЦА*/
 img{
@@ -105,7 +110,7 @@ img{
 
 .h3{
 	margin:0;
-	padding-bottom: 16px;
+	margin-bottom: 16px;
 	font-size: 24px;
 	line-height: 30px;
 	font-weight: 700;
@@ -120,7 +125,6 @@ img{
 	text-align: center;
 	/*padding-top: 87px;*/
 	margin: 0;
-	margin-bottom: 149px;
 	
 }
 
@@ -241,7 +245,7 @@ img{
 /* Кнопка  */
 
 .button{
-	font:inherit;
+	font-family: inherit;
 	color: var(--basic-text-white);
 	background-color:var(--main-accent-normal);
 	font-size: 16px;
@@ -270,6 +274,8 @@ img{
 
 
 /* Услуги  */
+
+
 .services{
 	margin-bottom: 80px;
 }
@@ -285,14 +291,13 @@ img{
 	text-align: left;
 }
 .services-item img{
-	padding-bottom: 25px;
+	margin-bottom: 25px;
 }
 .service-info{
 	margin: 0;
-	padding-bottom: 32px;
+	margin-bottom: 32px;
 }
 .services-button{
-	
 	padding: 17px 40px;
 	width: 160px;
 }
@@ -331,7 +336,7 @@ img{
 
 /* О нас  */
 
-.about-info-container{
+.about{
 	margin-bottom: 73px;
 }
 .about-title{
@@ -401,7 +406,7 @@ img{
 /* Футер  */
 	
 .main-footer{
-	margin-bottom: 75px ;
+	margin-bottom: 75px;
 }
 .footer-contacts{
 	font-style: normal;
@@ -488,29 +493,138 @@ img{
 /* КАТАЛОГ */
 
 
-.background {
+/* шапка каталога */
+
+.main-header{
+	 padding-bottom: 78px;
+}
+.page-catalog-filter {
+	display: grid;
+	grid-template-columns: 260px 760px;
+	column-gap: 141px;
+	margin-bottom: 60px;
+}
+.page-catalog-header {
 	background-color:var(--background-normal);
+	padding-bottom: 108px;
+	margin-bottom: 55px;		/*  */
+}
+.filter-form{
+	width: 260px;
+}
+.filter-controls{
+	margin:0;
+	padding:0;
+	border:none;
+	margin-bottom: 54px;
 }
 .filter-title{
+	margin:0;
 	font-size: 18px;
 	line-height: 30px;
 	font-weight: 700;
 	text-transform: uppercase;
 	color: var(--basic-text-black);
 }
+.range-filter-wrap{
+	margin-top: 48px; }
+.range-controls{
+	position: relative; /* потому что кружки будут относительно позиционироваться*/
+	height: 80px; 	/* ??? 80 - 39= 41  должен быть высота, блок минус высота отступа внетреннего, 
+					но у меня не изменяется высота с отступом внутренним*/
+	margin-bottom: 14px;
+	background-color: var(--background-normal);
+	border-radius: 3px;
+	padding-top: 39px;
+	padding-right: 22px;
+	padding-left: 22px;
+}
+.range-controls .scale{
+	background-color: var(--scale-basic);
+	height: 2px;
+}
+.range-controls .progress-bar{
+	height: 2px;
+	background-color: var(--scale-progress);
+	width: 70%;
+}
+.range-controls .toggle{
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	width: 4px;
+	height: 4px;
+	padding: 0;
+	background-color: var(--toggle-background);
+	border: 8px solid var(--basic-text-white);
+	border-radius:50%;
+	box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15);	
+	cursor: pointer;
+}
+.range-controls .min-toggle{
+	left: 18px;
+}
+.range-controls .max-toggle{
+	left: 160px;
+}
 .filter-label{
 	line-height: 20px;
 }
-.filter-inputs-label{
+.price-controls{
+	display: flex;
+	justify-content: space-between;
+}
+.price-controls label{
+	font-family: 'Roboto','Arial', sans-serif;
+	font-size: 16px;
 	line-height: 22px;
 	text-transform: uppercase;
 }
+.price-controls input{
+	font-family: inherit;
+	font-size: inherit;
+	width: 80px;
+	background-color: var(--background-normal);
+	color: var(--basic-text-medium);
+	text-align: center;
+	padding: 8px 35px;
+	border:none;
+	border-radius: 3px;
+	margin-left: 11px;
+}
 .filter-list{
+	margin:0;
+	padding:0;
+	display: flex;
+    justify-content: space-between;
 	list-style-type:none;
 }
 .filter-item{
 	line-height: 20px;
 	color: var(--basic-text-medium);
+}
+
+
+/*Каталог сотритровка */
+
+
+.filter-container-sort {
+	display: grid;
+	grid-template-rows: min-content 1fr min-content;
+
+}
+.filter-sort{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 48px;
+}
+.filter-list{
+	display: flex;
+	justify-content: space-between;
+}
+.filter-sort-item:not(:last-child){
+	margin-right: 25px;
 }
 .filter-sort-link{
 	font-size: 14px;
@@ -526,19 +640,23 @@ img{
 .filter-sort-link:active{
 	opacity: 1;
 }
+.filter-grid, .filter-features{
+	margin-bottom: 48px;
+}
 /*Кнопка фильтра Показать */
-
-.button-filter{
+.button-grey{
+	display: inline-block;
 	background-color: var(--show-button-normal);
 	color: var(--basic-text-black);
 	padding: 17px 89px 15px 88px;
 	border:none;
 	cursor: pointer;
+	min-width: 260px;
 }
-.button-filter:hover{
+.button-grey:hover{
 	background-color: var(--show-button-hover);
 }
-.button-filter:active{
+.button-grey:active{
 	background-color:var(--show-button-aktive);
 	box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 	color: rgba(0,0,0,0.3);
@@ -571,28 +689,45 @@ img{
 	opacity: 1;
 }
 
-/*Шаблоны*/
+/*Каталог с шаблонами*/
 
 .catalog-item{
+	position: relative; /*позиция? */
 	border-radius: 5px;
 }
 .catalog-pict{
-	border-radius: 0 0 5px 5px;
-	
+	border-radius: 0 0 5px 5px;	
 }
 .catalog-item:hover{
 	box-shadow: 0px 6px 15px rgba(0, 1, 1, 0.25);
 }
+/*  Шаблоны */
 .catalog-list{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 42px;
+	grid-row-gap: 50px;
 	list-style: none;
+	margin: 0;
+	padding:0;
+	margin-bottom: 55px;
 }
 /* Карточки инфо*/
-.catalog-card{
+
+.catalog-card {
+	width: 360px;
+	height: 231px;
+	background-color: var(--background-normal);
 	text-align: center;
+	padding:26px 52px 44px 53px;
+}
+.title-card{
+	margin-bottom: 12px;
 }
 .catalog-card-link{
 	text-decoration: none;
 	color:var(--basic-text-black);
+	margin-bottom: 12px;
 }
 .catalog-card-link:hover{
 	color:var(--main-accent-normal);
@@ -602,6 +737,8 @@ img{
 }
 
 .catalog-card-info{
+	margin:0;
+	margin-bottom: 32px;
 	line-height: 18px;
 	color: var(--card-text);
 }
@@ -610,6 +747,7 @@ img{
 .card-button{
 	width: 200px;
 	padding: 17px 72px 15px;
+	margin:0 auto;
 }
 .card-button:hover{
 	background-color: var(--main-accent-hover);
@@ -621,13 +759,20 @@ img{
 /*-- 1 2 3 Следующая*/
 
 .pagination-list{
+	display: flex;
 	list-style: none;
+	margin: 0;
+	padding:0;
 
 }
-.pagination-item{
-	margin-bottom: 40px; /*  временный отступ- чтобы видеть кнопки , а то сливаются))*/
+.pagination-item:not(:last-child){
+	margin-right: 11px;
 }
-.pagination-link{
+
+.pagination-button{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
 	padding:17px 20px 15px; 
 	text-decoration: none;
 	color:var(--basic-text-black);
@@ -635,19 +780,16 @@ img{
 	text-transform: uppercase;
 	background-color:var(--pagination-background-normal);
 }
-.pagination-link:hover{
+.pagination-button:hover{
 	background-color:var(--pagination-background-hover);
 }
-.pagination-link:active{
+.pagination-button:active{
 	background-color:var(--pagination-background-active);
 	box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 	color: rgba(0,0,0,0.3);
 }
-.pagination-link-current{
-	text-decoration: none;
-	color:var(--basic-text-black);
-	border: 3px solid var(--pagination-border);
-	border-radius: 3px;
+.pagination-button-current{
+	border: 3px solid var(--pagination-border); /*если делаю outline то не закругляется...а с рамкой получается не посередине*/
 	background: rgba(0, 0, 0, 0.0001);
 }
 
