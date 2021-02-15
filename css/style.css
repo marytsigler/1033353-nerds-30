@@ -1,4 +1,5 @@
 	/* Variables*/
+
 :root{
 
 	/* ИНДЕКС ЦВЕТА*/
@@ -107,7 +108,10 @@ img{
 .page{
 	height:100%;
 }
-
+.main-header{
+	padding-top: 49px;
+	/*padding-bottom: 78px;*/
+}
 .h3{
 	margin:0;
 	margin-bottom: 16px;
@@ -134,7 +138,7 @@ img{
 	background-color:var(--background-normal);
 	
 }
- .slider-background{
+ .slider-background{ 				  
  	margin-bottom: 80px;
  }
 
@@ -143,10 +147,13 @@ img{
 .container{
 	width: 1160px;
 	margin: 0 auto;
+	padding:0 10px;	
 }
+
 .main-navigation{
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	font-size: 16px;
 	line-height: 30px;
 	font-weight: 500;
@@ -154,8 +161,9 @@ img{
 	background-color:var(--background-normal);
 }
 .main-header-logo{
-	margin-top: 49px;
 	margin-right: 202px;
+	width: 160px;
+
 }
 .main-header-logo:hover .logotip{    /* при наведении картинка в ссылке меняет прозрачность */
 	opacity: 0.7;
@@ -163,17 +171,18 @@ img{
 .main-header-logo:active .logotip{    /* картинка в ссылке меняет прозрачность */
 	opacity: 0.3;
 }
-
 .navigation-item a{  
 	text-decoration: none;
 	color: var(--basic-text-black);
 }
 .navigation-list{
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	list-style: none;
 	margin:0;
 	padding:0;
-	margin-top: 75px;
+	width: 437px;
 	margin-right: 246px;
 }
 .navigation-item:not(:last-child){
@@ -191,9 +200,13 @@ img{
 	opacity: 0.3;
 }
 .navigation-cart{
-	margin-top: 75px;
-
+	max-width: 75px;
+	/*margin-top: 75px;*/
 }
+.navigation-cart .navigation-link{
+	padding-left: 25px;
+}
+
 .navigation-current{
 	border-bottom: 2px solid var(--main-accent-normal);
 	padding-bottom: 13px;
@@ -218,7 +231,6 @@ img{
 }
 .slider-1{
 	background-image: url(../img/nerds-index-slide1.png);
-	
 }
 .slider-2{
 	background-image: url(../img/nerds-index-slide2.png);
@@ -337,7 +349,15 @@ img{
 /* О нас  */
 
 .about{
-	margin-bottom: 73px;
+	margin-bottom: 39px;
+}
+.about-info-container{
+	display: flex;
+	justify-content: space-between;
+}
+.about-info-wrap{
+	padding-top: 73px;
+	width: 651px;
 }
 .about-title{
 	margin:0;
@@ -351,6 +371,10 @@ img{
 	margin: 0;
 	margin-bottom: 40px;
 }
+.about-statistik img{
+	width: 360px;
+	margin-bottom: 37px;
+}
 .about-description-subtitle{
 	margin:0;
 	font-weight: 700;
@@ -359,20 +383,18 @@ img{
 }
 .about-description-list{
 	margin: 0;
+	padding:0;
 	list-style: none;
-
 }
 .about-description-item:not(:last-child){
 	margin-bottom: 30px;
 }
-
 .table-numbers{
 	font-size: 45px;
 	line-height: 64px;
 	font-weight: 700;
 	padding-bottom: 10px;
 }
-
 .table-content{
 	line-height: 18px;
 }
@@ -384,14 +406,19 @@ img{
 }
 
 
-
 /* Партнеры  */
 
 .partners{
 	margin-bottom:44px;
 }
 .partners-list{
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
 	list-style:none;
+	margin: 0;
+	padding: 0;
+
 }
 .partners-item-link{    
  	opacity: 0.2;
@@ -408,6 +435,10 @@ img{
 .main-footer{
 	margin-bottom: 75px;
 }
+.footer-map-contacts{
+	margin-bottom: 68px;
+}
+
 .footer-contacts{
 	font-style: normal;
 	font-size: 16px;
@@ -455,11 +486,19 @@ img{
 	color: rgba(255,255,255,0.3);
  	background-color: var(--main-accent-active);
 }
+.footer-socials-wrap{
+	display: flex;
+	align-items: center;
+}
 .footer-socials-list{
 	margin:0;
+	padding: 0;
+	margin-right: 139px;
 	list-style:none;
 	display: flex;
-	flex-wrap: wrap;
+}
+.footer-socials-item:not(:last-child){
+	margin-right: 9px;
 }
 .footer-socials-link{
 	width: 81px;
@@ -476,6 +515,7 @@ img{
 	box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 }
 .footer-text{
+	margin: 0;
 	font-size: 36px;
 	line-height: 36px;
 	font-weight: 700;
@@ -483,6 +523,7 @@ img{
 	margin-bottom: 10px;
 }
 .footer-info{
+	margin: 0;
 	font-size: 16px;
 	line-height: 22px;
 	color: var(--additional-text);
@@ -495,9 +536,7 @@ img{
 
 /* шапка каталога */
 
-.main-header{
-	 padding-bottom: 78px;
-}
+
 .page-catalog-filter {
 	display: grid;
 	grid-template-columns: 260px 760px;
@@ -608,11 +647,6 @@ img{
 /*Каталог сотритровка */
 
 
-.filter-container-sort {
-	display: grid;
-	grid-template-rows: min-content 1fr min-content;
-
-}
 .filter-sort{
 	display: flex;
 	justify-content: space-between;
@@ -789,8 +823,12 @@ img{
 	color: rgba(0,0,0,0.3);
 }
 .pagination-button-current{
-	border: 3px solid var(--pagination-border); /*если делаю outline то не закругляется...а с рамкой получается не посередине*/
+	border: 3px solid var(--pagination-border); /*если делаю outline то не закругляется...а с рамкой шрифт получается не посередине*/
 	background: rgba(0, 0, 0, 0.0001);
+}
+.pagination-button-current:hover{
+	background: rgba(0, 0, 0, 0.0001);
+	border: 3px solid var(--pagination-border);
 }
 
 
