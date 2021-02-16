@@ -161,9 +161,8 @@ img{
 	background-color:var(--background-normal);
 }
 .main-header-logo{
-	margin-right: 202px;
 	width: 160px;
-
+	flex-shrink: 0;
 }
 .main-header-logo:hover .logotip{    /* при наведении картинка в ссылке меняет прозрачность */
 	opacity: 0.7;
@@ -171,19 +170,23 @@ img{
 .main-header-logo:active .logotip{    /* картинка в ссылке меняет прозрачность */
 	opacity: 0.3;
 }
-.navigation-item a{  
-	text-decoration: none;
-	color: var(--basic-text-black);
-}
 .navigation-list{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	list-style: none;
 	margin:0;
-	padding:0;
-	width: 437px;
-	margin-right: 246px;
+	padding:0;	
+}
+.navigation-item{
+	margin-right: 45px;
+}
+.navigation-item:last-child{
+	margin-right: 0;
+}
+.navigation-item a{  
+	text-decoration: none;
+	color: var(--basic-text-black);
 }
 .navigation-item:not(:last-child){
 	margin-right: 45px;
@@ -199,14 +202,13 @@ img{
 	color: var(--basis-text-active);
 	opacity: 0.3;
 }
-.navigation-cart{
-	max-width: 75px;
-	/*margin-top: 75px;*/
+.navigation-cart {
+	flex-shrink: 0;
+	margin-left: 10px;
 }
 .navigation-cart .navigation-link{
 	padding-left: 25px;
 }
-
 .navigation-current{
 	border-bottom: 2px solid var(--main-accent-normal);
 	padding-bottom: 13px;
