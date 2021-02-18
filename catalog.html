@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Каталог - Дизайн-студия Nёrds</title>
 
@@ -23,11 +23,10 @@
     <!--CSS</!-->
 
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body class="page-body inner-page">
+</head>
+<body class="page-body inner-page">
   	<header class="main-header">
-  		<div class="container">
-  			<nav class="main-navigation">
+  			<nav class="main-navigation container">
 		  		<a class="main-header-logo" href="index.html"> 
 		  			<img class="logotip" src="img/nerds-logo.svg" width="160" height="65" alt="логотип дизайн-студии Нёрдс">
 		  		</a>
@@ -49,7 +48,7 @@
 	  				<a class="navigation-link" href="#">Корзина</a> 
 	   			</div>
   			</nav>
-  		</div>	
+  		
   	</header>
   	<main class="page-main">
   		<div class="page-catalog-header">
@@ -65,8 +64,8 @@
 		  				<h2 class="visually-hidden">
 	  						Фильтр товаров
 	  					</h2>
-			  				<fieldset class="filter-controls">
-			  					<legend class="filter-title">
+			  				<fieldset>
+			  					<legend class="filter-title filter-title-price">
 			  						Стоимость:
 			  					</legend>
 			  					<div class="range-filter-wrap">
@@ -93,8 +92,8 @@
 									</div>
 			  					</div>
 			  				</fieldset>
-				  			<fieldset class="filter-grid">
-				  				<legend class="filter-title">
+				  			<fieldset>
+				  				<legend class="filter-title filter-title-other">
 				  					Сетка:
 				  				</legend>
 				  				<ul class="filter-list">
@@ -118,8 +117,8 @@
 					  				</li>
 				  				</ul>	  				
 				  			</fieldset>
-				  			<fieldset class="filter-features">
-				  				<legend class="filter-title">
+				  			<fieldset>
+				  				<legend class="filter-title filter-title-other">
 				  					Особенности:
 				  				</legend>
 				  				<ul class="filter-list">	  				
@@ -141,7 +140,7 @@
 						  					Новости	
 					  					</label>
 					  				</li>
-					  				<li class="filter-fitem">
+					  				<li class="filter-item">
 					  					<input class="checkbox" type="checkbox" name="feature" value="galery">
 					  					<label class="filter-label">		
 						  					Галерея	
@@ -159,13 +158,14 @@
 		  					Показать
 		  				</a>	
 		  			</form>
-		  			<!--сортировка-->
+		  			<!--Каталог сортировка-->
 					<div class="filter-container-sort"><!--Обертка карточек-->
 			  			<div class="filter-sort">
 			  				<p class="filter-title">
 				  				Сортировать:
 				  			</p>	
-				  				<ul class="filter-list">
+				  			<div class="filter-sort-wrap">
+				  				<ul class="filter-sort-list">
 				  					<li class="filter-sort-item">
 				  						<a class="filter-sort-link" href="#">по цене</a>
 				  					</li>
@@ -176,19 +176,20 @@
 				  						<a class="filter-sort-link" href="#">по названию</a>
 				  					</li>	
 				  				</ul>
-					<!--Стрелки  вниз вверх !-->
-				 			<div class="direction-icon-block">
-				 				<a class="direction-icon direction-icon-down" href="#">Вниз
-				 				</a>
-				 				<a class="direction-icon direction-icon-top " href="#">Вверх
-				 				</a>
-				 			</div>
+								<!--Стрелки  вниз вверх !-->
+					 			<div class="direction-icon-block">
+					 				<a class="direction-icon direction-icon-down" href="#">
+					 				</a>
+					 				<a class="direction-icon direction-icon-top " href="#">
+					 				</a>
+					 			</div>
+				  			</div>	
 				 		</div>
 			 	 	<!--Шаблоны с карточками!-->
 						<ul class="catalog-list">
 						<!--Шаблон Седона!-->
 							<li class="catalog-item">
-						  		<img src="img/img-sedona.jpg" width="359" height="578" alt="Шаблон Седона">
+						  		<img class="catalog-pict" src="img/img-sedona.jpg" width="358" height="578" alt="Шаблон Седона">
 						  		<div class="catalog-card">
 						   			<p class="filter-title title-card">
 						   				<a class="catalog-card-link" href="#">Sedona</a>
@@ -203,7 +204,7 @@
 							</li>
 					<!--Шаблон Пинк !-->		
 							<li class="catalog-item">
-								<img src="img/img-pink.jpg" width="358" height="578" alt="Шаблон Пинк">
+								<img class="catalog-pict" src="img/img-pink.jpg" width="358" height="578" alt="Шаблон Пинк">
 						   		<div class="catalog-card">
 						   			<p class="filter-title title-card">
 						   				<a class="catalog-card-link" href="#">Pink App</a>
@@ -248,7 +249,7 @@
 							</li>
 					<!--Шаблон А+ !-->
 							<li class="catalog-item">
-								<img src="img/img-aplus.jpg" width="359" height="578" alt="Шаблон А+">
+								<img src="img/img-aplus.jpg" width="358" height="578" alt="Шаблон А+">
 						   		<div class="catalog-card">
 						   			<p class="filter-title title-card">
 						   				<a class="catalog-card-link" href="#">A Plus</a>
@@ -263,7 +264,7 @@
 							</li>
 					<!--Шаблон Кваст !-->
 							<li class="catalog-item">
-						  		<img src="img/img-kvast.jpg" width="359" height="578" alt="Шаблон Кваст">
+						  		<img src="img/img-kvast.jpg" width="358" height="578" alt="Шаблон Кваст">
 						   		<div class="catalog-card">
 						   			<p class="filter-title title-card">
 						   				<a class="catalog-card-link" href="#">Kvast</a>
@@ -298,7 +299,8 @@
    	</main>	
    	<footer class="main-footer">
    		<section class="footer-map-contacts">
-   			<address class="footer-contacts">
+   			<div class="address-wrap">
+   				<address class="footer-contacts">
 				<p class="footer-contacts-name">
 					NЁRDS DESIGN STUDIO
 				</p>
@@ -314,6 +316,8 @@
 					Напишите нам
 				</button>
 			</address>
+   			</div>
+   			
 			<img src="img/map_marker.png" width="1440" height="416" alt="Карта с маркером как к нам добраться">
 		</section>
 		<div class="container">
