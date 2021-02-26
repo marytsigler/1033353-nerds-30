@@ -263,7 +263,7 @@ img{
 	width: 760px;
 	height: 431px;
 	background: url(../img/nerds-index-slide1.png) no-repeat;
-	transform: translate(431px,-360px);
+	transform: translate(431px,-360px); /* -350px*/
 }
 .slider-2{
 	background-image: url(../img/nerds-index-slide2.png);
@@ -293,7 +293,6 @@ img{
 	width: 88px;
 	transform: translate(536px, -96px);	
 }
-
 .slider-controls .button-control{
 	position: relative;
 	padding: 0;
@@ -604,10 +603,12 @@ width: 100%;
 }
 .contacts-button:hover{
 	background-color: var(--main-accent-hover);
+	outline: none;
 }
 .contacts-button:active{
 	color: rgba(255,255,255,0.3);
  	background-color: var(--main-accent-active);
+ 	outline: none;
 }
 .footer-socials-wrap{
 	display: flex;
@@ -687,7 +688,7 @@ width: 100%;
 /* Модальное окно*/
 
 .modal{
-	position: absolute;
+	position: fixed;
 	left: 240px;
 	width: 960px;
 	background-color: var(--basic-text-white);
@@ -1195,6 +1196,7 @@ width: 100%;
 }
 .card-button:active{
 	background-color: var(--main-accent-active);
+	box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 }
 
 /*-- 1 2 3 Следующая*/ /* box-shadow: inset 0 0 1px #cccccc;*/
@@ -1233,7 +1235,7 @@ width: 100%;
 .pagination-button-current{
 	box-shadow:inset 0px 0px 0px 3px var(--pagination-border);
 	background: rgba(0, 0, 0, 0.0001);
-	cursor: no-drop;
+	cursor: no-drop; 
 }
 .pagination-button-current:hover{
 	box-shadow:inset 0px 0px 0px 3px var(--pagination-border);
