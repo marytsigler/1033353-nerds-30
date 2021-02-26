@@ -94,7 +94,7 @@ img{
     box-sizing: border-box
 }
 .page-body{
-	min-width: 1160px;
+	min-width: 1200px;
 	padding: 0;
 	margin: 0;
 	font-family: 'Roboto','Arial', sans-serif;
@@ -114,13 +114,9 @@ img{
 .page{
 	height:100%;
 }
-.main-header{
-	padding-top: 49px;
-	/*padding-bottom: 78px;*/
-}
 .h3{
 	margin:0;
-	margin-bottom: 16px;
+	margin-bottom: 15px;
 	font-size: 24px;
 	line-height: 30px;
 	font-weight: 700;
@@ -141,7 +137,8 @@ img{
 
 .main-header{	
 	background-color:var(--background-normal);
-	
+	padding-top: 48px;
+
 }
  .slider-background{ 				  
  	margin-bottom: 80px;
@@ -183,6 +180,7 @@ img{
 	list-style: none;
 	margin:0;
 	padding:0;
+	padding-top: 9px;
 }
 .navigation-item{
 	margin-right: 45px;
@@ -208,7 +206,9 @@ img{
 .navigation-cart {
 	position:relative;
 	flex-shrink: 0;
-	margin-left: 10px; /*чтобы остальное меню не прилипало к корзине, если меню станет больше*/
+	margin-left: 45px;
+	padding-top: 9px;
+ /*чтобы остальное меню не прилипало к корзине, если меню станет больше*/
 }
 .cart-link{
 	 padding-left:42px;/*чтобы область ссылки увеличивалась и при наведении на иконку можно было перейти по ссылке*/
@@ -225,7 +225,8 @@ img{
 }
 .navigation-current{
 	border-bottom: 2px solid var(--main-accent-normal);
-	padding-bottom: 13px;
+	padding-bottom: 18px;
+
 }
 
 /* Cлайдер  */
@@ -254,7 +255,7 @@ img{
 .slider-box {
 	position:relative;
 	display: block;
-	padding:78px 0 80px 0;
+	padding: 68px 0 80px 0;
 }
 
 .slider-1::after{
@@ -278,13 +279,13 @@ img{
 	font-weight: 500;
 	color: var(--basic-text-black);
 	margin: 0;
-	margin-bottom: 25px;
+	margin-bottom: 27px;
 	max-width: 450px;
 } 
 .slider-text{
 	max-width: 450px;
 	margin:0;
-	margin-bottom: 55px;
+	margin-bottom: 39px;
 }
 .slider-controls{
 	position: absolute;
@@ -356,26 +357,26 @@ img{
 
 .services{
 	border-bottom: 2px solid var(--background-normal);
-	padding-bottom: 80px;
-	margin-bottom: 39px;
+	padding-bottom: 79px;
 }
 .services-list{
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 300px 300px 300px;
 	column-gap:100px;
 	list-style:none;
 	margin: 0; 
 	padding: 0;
+
 }
 .services-item{
 	text-align: left;
 }
 .services-item img{
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 }
 .service-info{
 	margin: 0;
-	margin-bottom: 32px;
+	margin-bottom: 33px;
 }
 .services-button{
 	padding: 17px 40px;
@@ -418,8 +419,8 @@ img{
 
 .about{
 	border-bottom: 2px solid var(--background-normal);
-	padding-bottom: 73px;
-	margin-bottom: 46px;
+	padding-bottom: 75px;
+	
 }
 .about-info-container{
 	display: flex;
@@ -435,7 +436,7 @@ img{
 	line-height: 45px;
 	font-weight: 500;
 	color: var(--basic-text-black);
-	margin-bottom: 32px;
+	margin-bottom: 34px;
 }
 .about-text{
 	margin: 0;
@@ -443,23 +444,33 @@ img{
 }
 .about-statistik img{
 	width: 360px;
-	margin-bottom: 37px;
+	margin-bottom: 30px;
+	margin-top: 39px;
 }
 .about-description-subtitle{
 	margin:0;
 	font-weight: 700;
 	text-transform: uppercase;
-	margin-bottom: 23px;
+	
 }
+.subtitle-left{
+	text-align: left;
+	margin-bottom: 25px;
+}
+.subtitle-right{
+	text-align: center;
+	margin-bottom:30px;
+}
+
 .about-description-list{
 	margin: 0;
 	padding:0;
 	list-style: none;
 }
 .about-description-item{
-	margin-bottom: 30px;
+	margin-bottom: 23px;
 	position: relative;
-	padding-left: 42px;
+	padding-left: 35px;
 }
 .about-description-item:last-child{
 	margin-bottom: 0px;
@@ -468,16 +479,20 @@ img{
 	position: absolute;
 	content:"";
 	left:0;
-	top: 10px; 
+	top: 11px; 
 	width:25px;
 	height:2px;
 	background-color: var(--main-accent-normal);
+}
+.about-statistik-table{
+	text-align: left;
 }
 .table-numbers{
 	font-size: 45px;
 	line-height: 64px;
 	font-weight: 700;
-	padding-bottom: 10px;
+	padding-bottom: 8px;
+	padding-right: 8px;	
 }
 .table-content{
 	line-height: 18px;
@@ -494,27 +509,33 @@ img{
 
 .partners{
 	border-bottom: 2px solid var(--background-normal);
-	padding-bottom: 44px;
 	margin-bottom:80px;
 }
 .partners-list{
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
-	text-align: center;
+	align-items: center;
+	align-content: center;
+	min-height: 180px;
 	list-style:none;
 	margin: 0;
 	padding: 0;
 }
 .partners-item{
-	position:relative;
+	display: flex;
+    position: relative;
+    align-items: center;
+    min-width: 260px;
+
 }
 .partners-item::after{
 	content:"";
+	position: absolute;
 	width:2px;
 	height: 52px;
-	position: absolute;
 	background-color:var(--background-normal);
-	transform: translate(48px);
+	right:0;
 }
 .partners-item-last::after{
 	display: none;
@@ -831,24 +852,35 @@ img{
 }
 .page-catalog-header {
 	background-color:var(--background-normal);
-	padding-top: 72px;
+	padding-top: 68px;
 	padding-bottom: 108px;
-	margin-bottom: 55px;	
+	margin-bottom: 57px;	
 }
 
-/* Форма */
+/* Форма   ФИЛЬТР */
 
 
 .filter-form{
 	width: 260px;
 }
-.filter-form fieldset{
+.form-fieldset-block {
 	margin:0;
 	padding: 0;
 	border:none;
 	margin-bottom: 54px;
 }
+.form-fieldset{
+	padding: 0;
+	margin: 0;
+	margin-bottom: 46px;
 
+}
+.form-fieldset-special{
+	padding: 0;
+	margin: 0;
+	margin-bottom: 58px;
+
+}
 .filter-title{
 	margin:0;
 	font-size: 18px;
@@ -924,7 +956,7 @@ img{
 	padding-bottom: 8px;
 	border:none;
 	border-radius: 3px;
-	margin-left: 11px;
+	margin-left: 8px;
 }
 .filter-list{
 	margin:0;
@@ -1005,7 +1037,7 @@ img{
 }
 
 
-	/* ФИЛЬТР */
+	
 
 
 .filter-sort{
@@ -1123,7 +1155,6 @@ img{
 	height: 14px;
 	border-radius: 50%;
 	background-color: var(--basic-text-white);
-
 	margin-right: 9px;
 }
 .catalog-item:hover .header-catalog-browser{
@@ -1133,11 +1164,11 @@ img{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	column-gap: 42px;
-	grid-row-gap: 32px;
+	grid-row-gap: 25px;
 	list-style: none;
 	margin: 0;
 	padding:0;
-	margin-bottom: 55px;
+	margin-bottom: 50px;
 }
 .catalog-item{
 	position: relative; /*позиция? */
@@ -1160,7 +1191,7 @@ img{
 	height: 231px;
 	background-color: var(--background-normal);
 	text-align: center;
-	padding:26px 52px 44px 53px;
+	padding:23px 52px 44px 53px;
 	transform:translate(0px, -230px);
 }
 .title-card{
