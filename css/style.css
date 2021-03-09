@@ -198,9 +198,7 @@ img{
 	text-decoration: none;
 	color: var(--basic-text-black);
 	align-items: center;
-}
-.navigation-item a{
-	color: var(--basic-text-black);
+	font-weight: 500;
 	text-transform: uppercase;
 }
 .navigation-item a:hover{
