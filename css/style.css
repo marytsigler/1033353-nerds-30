@@ -916,7 +916,7 @@ img{
 	display: grid;
 	grid-template-columns: 260px 760px;
 	column-gap: 140px;
-	margin-bottom: 62px;
+	margin-bottom: 52px;
 }
 .page-catalog-header {
 	background-color:var(--background-normal);
@@ -1099,13 +1099,18 @@ img{
 	opacity: 1;
 
 }
-/*.filter-input-radio + .filter-label::before:disabled{
-	opacity: 0.1;
 
-}*/
-.filter-input-radio:disabled + .filter-label{
-    opacity: .1;
-    cursor: not-allowed;
+.filter-input-radio:disabled + .filter-label {
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.filter-input-checkbox:disabled + .filter-label{
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
 }
 
 .filter-input-checkbox:checked + .filter-label:hover::before{
@@ -1248,7 +1253,7 @@ img{
 
 .catalog-pict{
 	display: block;
-	object-fit: cover;
+	object-fit: contain;
 	border-radius: 0 0 5px 5px;	
 	width: 100%;
 	padding-top: 40px;
@@ -1292,6 +1297,9 @@ img{
 	margin-bottom: 33px;
 	line-height: 18px;
 	color: var(--card-text);
+	overflow: hidden;
+    max-height: 36px;
+	
 }
 
 /*Кнопка в карточке с ценой*/
@@ -1304,12 +1312,17 @@ img{
 
 .pagination-list{
 	display: flex;
-	list-style: none;
+	flex-wrap: wrap;
 	margin: 0;
 	padding:0;
+	list-style: none;
+
+	
 }
 .pagination-item{
 	margin-right: 11px;
+	margin-bottom: 10px;
+
 }
 .pagination-item:last-child{
 	margin-right:0;
