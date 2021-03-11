@@ -28,7 +28,7 @@
   	<header class="main-header">
   			<nav class="main-navigation container">
 		  		<a class="main-header-logo" href="index.html"> 
-		  			<img class="logotip" src="img/nerds-logo.svg" width="160" height="65" alt="логотип дизайн-студии Нёрдс">
+		  			<img class="logo-pict" src="img/nerds-logo.svg" width="160" height="65" alt="логотип дизайн-студии Нёрдс">
 		  		</a>
 		  			<ul class="navigation-list">
 		  				<li class="navigation-item">
@@ -64,7 +64,7 @@
 		  				<h2 class="visually-hidden">
 	  						Фильтр товаров
 	  					</h2>
-			  				<fieldset class="form-fieldset-block form-fieldset-special">
+			  				<fieldset class="form-fieldset-block form-fieldset-price">
 			  					<legend class="filter-title filter-title-price">
 			  						Стоимость:
 			  					</legend>
@@ -85,16 +85,17 @@
 					  				<div class="price-controls">
 					  					<label class="price-min">
 					  						От
-											<input type="number" name="price-min" value="0">
+											<input type="text" name="price-min" value="0">
 										</label>
-										<label class="price-max">
+										<label class="price-max label-price-max">
 											До
-											  <input type="number" name="price-max" value="15000">
+											  <input type="text" name="price-max" value="15000">
 										</label>
 									</div>
 			  					</div>
 			  				</fieldset>
-				  			<fieldset class="form-fieldset-block form-fieldset">
+
+				  			<fieldset class="form-fieldset-block form-fieldset-grid">
 				  				<legend class="filter-title filter-title-other">
 				  					Сетка:
 				  				</legend>
@@ -118,9 +119,10 @@
 					  					</label>
 					  				</li>
 					  				
+					  				
 				  				</ul>	  				
 				  			</fieldset>
-				  			<fieldset class="form-fieldset-block form-fieldset">
+				  			<fieldset class="form-fieldset-block form-fieldset-special">
 				  				<legend class="filter-title filter-title-other">
 				  					Особенности:
 				  				</legend>
@@ -132,7 +134,7 @@
 					  					</label>
 					  				</li>
 					  				<li class="filter-item">
-					  					<input id="advantages" class="visually-hidden filter-input-checkbox" type="checkbox" name="advantages">
+					  					<input id="advantages" class="visually-hidden filter-input-checkbox" type="checkbox" name="advantages" disabled="disabled">
 					  					<label for="advantages" class="filter-label">
 					  						Блок преимуществ	
 					  					</label>
@@ -154,15 +156,18 @@
 										<label for="shop" class="filter-label">
 						  					Корзина
 						  				</label>
-					  				</li>
+					  				</li>					  				
 				  				</ul>
 				  			</fieldset>
 		  				<a class="button-grey button" href="#">
 		  					Показать
 		  				</a>	
-		  			</form>
+		  		</form>
 		  			<!--Каталог сортировка-->
-					<div class="filter-container-sort"><!--Обертка карточек-->
+					<section class="filter-container-sort">
+						<h2 class="visually-hidden">
+							Каталог готовых шаблонов
+						</h2>
 			  			<div class="filter-sort">
 			  				<p class="filter-title">
 				  				Сортировать:
@@ -177,9 +182,8 @@
 				  					</li>
 				  					<li class="filter-sort-item">
 				  						<a class="filter-sort-link" href="#">по названию</a>
-				  					</li>	
+				  					</li>
 				  				</ul>
-								<!--Стрелки  вниз вверх !-->
 					 			<div class="direction-icon-block">
 					 				<a class="direction-icon direction-icon-down sort-current" href="#">
 					 				</a>
@@ -190,54 +194,30 @@
 				 		</div>
 			 	 	<!--Шаблоны с карточками!-->
 						<ul class="catalog-list">
-						<!--Шаблон Седона!-->
 							<li class="catalog-item">
 								<article>
-									<div class="header-catalog-browser">
-										<ul class="header-catalog-icons">
-											<li class="header-catalog-icon">
-											</li>
-											<li class="header-catalog-icon">
-											</li>
-											<li class="header-catalog-icon">
-											</li>
-										</ul>
-									</div>
 									<img class="catalog-pict" src="img/img-sedona.jpg" width="358" height="578" alt="Шаблон Седона">
-						  		<div class="catalog-card">
-						   			<p class="filter-title title-card">
-						   				<a class="catalog-card-link" href="#">Sedona</a>
-						   			</p>
-						   			<p class="catalog-card-info">
-						   				Информационный сайт<br> для туристов
-						   			</p>
-						   			<a class="button card-button" href="#">
-						   				9 900 ₽
-						   			</a>
-						   		</div>
+							  		<div class="catalog-card">
+							   			<h3 class="filter-title title-card">
+							   				<a class="catalog-card-link" href="#">Sedona</a>
+							   			</h3>
+							   			<p class="catalog-card-info">
+							   				Информационный сайт<br> для туристов
+							   			</p>
+							   			<a class="button card-button" href="#">
+							   				9 900 ₽
+							   			</a>
+							   		</div>
 								</article>
-							</li>
-					<!--Шаблон Пинк !-->		
+							</li>	
 							<li class="catalog-item">
 								<article>
-									<div class="header-catalog-browser">
-										<ul class="header-catalog-icons">
-											<li class="header-catalog-icon">
-												
-											</li>
-											<li class="header-catalog-icon">
-												
-											</li>
-											<li class="header-catalog-icon">
-												
-											</li>
-										</ul>
-									</div>
 									<img class="catalog-pict" src="img/img-pink.jpg" width="358" height="578" alt="Шаблон Пинк">
 							   		<div class="catalog-card">
-							   			<p class="filter-title title-card">
-							   				<a class="catalog-card-link" href="#">Pink App</a>
-							   			</p>
+							   			<h3 class="filter-title title-card">
+							   				<a class="catalog-card-link" href="#">Pink App
+							   				</a>
+							   			</h3>
 							   			<p class="catalog-card-info">
 							   				Продуктовый лендинг<br> приложения для iOS и Android
 							   			</p>
@@ -247,27 +227,13 @@
 							   		</div>
 							   	</article>	
 							</li>
-					<!--Шаблон Барбершоп Бородински !-->
 							<li class="catalog-item">
 								<article>
-									<div class="header-catalog-browser">
-										<ul class="header-catalog-icons">
-											<li class="header-catalog-icon">
-												
-											</li>
-											<li class="header-catalog-icon">
-												
-											</li>
-											<li class="header-catalog-icon">
-												
-											</li>
-										</ul>
-									</div>
 									<img class="catalog-pict" src="img/img-barbershop.jpg" width="358" height="578" alt="Шаблон Барбершоп Бородинский">	
 							   		<div class="catalog-card">
-							   			<p class="filter-title title-card">
+							   			<h3 class="filter-title title-card">
 							   				<a class="catalog-card-link" href="#">Barbershop</a>
-							   			</p>
+							   			</h3>
 							   			<p class="catalog-card-info">
 							   				Сайт салона красоты.<br>Для мужчин, да.
 							   			</p>
@@ -277,27 +243,13 @@
 							   		</div>
 							   	</article>	
 							</li>
-					<!--Шаблон Мишка !-->
 							<li class="catalog-item">
 								<article>
-									<div class="header-catalog-browser">
-										<ul class="header-catalog-icons">
-											<li class="header-catalog-icon">
-												
-											</li>
-											<li class="header-catalog-icon">
-												
-											</li>
-											<li class="header-catalog-icon">
-												
-											</li>
-										</ul>
-									</div>
-							  		<img class="catalog-pict" src="img/img-mishka.jpg" width="358" height="578" alt="Шаблон Мишка">
+									<img class="catalog-pict" src="img/img-mishka.jpg" width="358" height="578" alt="Шаблон Мишка">
 							   		<div class="catalog-card">
-							   			<p class="filter-title title-card">
+							   			<h3 class="filter-title title-card">
 							   				<a class="catalog-card-link" href="#">Mishka</a>
-							   			</p>
+							   			</h3>
 							   			<p class="catalog-card-info">
 							   				Интернет-магазин<br>вязаных игрушек
 							   			</p>
@@ -307,27 +259,13 @@
 					   				</div>
 					   			</article>	
 							</li>
-					<!--Шаблон А+ !-->
 							<li class="catalog-item">
 								<article>
-									<div class="header-catalog-browser">
-										<ul class="header-catalog-icons">
-											<li class="header-catalog-icon">
-												
-											</li>
-											<li class="header-catalog-icon">
-												
-											</li>
-											<li class="header-catalog-icon">
-												
-											</li>
-										</ul>
-									</div>
-									<img src="img/img-aplus.jpg" width="358" height="578" alt="Шаблон А+">
+									<img class="catalog-pict" src="img/img-aplus.jpg" width="358" height="578" alt="Шаблон А+">
 							   		<div class="catalog-card">
-							   			<p class="filter-title title-card">
+							   			<h3 class="filter-title title-card">
 							   				<a class="catalog-card-link" href="#">A Plus</a>
-							   			</p>
+							   			</h3>
 							   			<p class="catalog-card-info">
 							   				Лендинг курсов повышения<br> квалификации
 							   			</p>
@@ -337,27 +275,13 @@
 							   		</div>
 							   	</article>	
 							</li>
-					<!--Шаблон Кваст !-->
 							<li class="catalog-item">
 								<article>
-									<div class="header-catalog-browser">
-										<ul class="header-catalog-icons">
-											<li class="header-catalog-icon">
-												
-											</li>
-											<li class="header-catalog-icon">
-												
-											</li>
-											<li class="header-catalog-icon">
-												
-											</li>
-										</ul>
-									</div>
-							  		<img src="img/img-kvast.jpg" width="358" height="578" alt="Шаблон Кваст">
+							  		<img class="catalog-pict" src="img/img-kvast.jpg" width="358" height="578" alt="Шаблон Кваст">
 							   		<div class="catalog-card">
-							   			<p class="filter-title title-card">
-							   				<a class="catalog-card-link" href="#">Kvast</a>
-							   			</p>
+							   			<h3 class="filter-title title-card">
+							   				<a class="catalog-card-link" href="#">Kваст</a>
+							   			</h3>
 							   			<p class="catalog-card-info">
 							   				Промо-сайт производителя<br> крафтового кваса
 							   			</p>
@@ -368,10 +292,9 @@
 							   	</article>	
 							</li>
 						</ul>
-					<!-- 1 2 3 Следующая!-->
 				   		<ul class="pagination-list">
-				   			<li class="pagination-item">
-				   				<a class="pagination-button button pagination-button-current" href="#">1</a>
+				   			<li class="pagination-item pagination-item-current">
+				   				<a class="pagination-button button" href="">1</a>
 				   			</li>
 							<li class="pagination-item">
 								<a class="pagination-button button" href="#">2</a>
@@ -383,108 +306,108 @@
 								<a class="pagination-button button button-grey" href="#">Следующая</a>
 							</li>
 						</ul>
-					</div>
-	  			</div><!--Конец общая обертка  !-->		
-  		</div>	<!--Конец контейнер  !-->	
+	  			</section><!--Конец общая обертка  !-->		
+  		</div>
    	</main>	
-   		<footer class="main-footer">
-	   		<section class="footer-map-contacts">
-	   			<div class="address-wrap container">
-	   				<address class="footer-contacts">
-						<p class="footer-contacts-name">
-							NЁRDS DESIGN STUDIO
-						</p>
-						<p class="footer-contacts-address">
-							191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8
-						</p>
-						<p class="footer-phone-info">
-							<a class="footer-contacts-phone" href="tel:+78122757575">
-								тел. +7 (812) 275-75-75
-							</a>
-						</p>
-						<button class="button contacts-button" type="button">
+   	<footer class="main-footer">
+		<section class="footer-map-contacts">
+	   		<h2 class="visually-hidden">
+				Контактная информация<!--Спрятать  !-->
+			</h2> 
+	   		<div class="address-wrap container">
+	   			<address class="footer-contacts">
+					<p class="footer-contacts-name">
+						NЁRDS DESIGN STUDIO
+					</p>
+					<p class="footer-contacts-address">
+						191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8
+					</p>
+					<p class="footer-phone-info">
+						<a class="footer-contacts-phone" href="tel:+78122757575">
+							тел. +7 (812) 275-75-75							
+						</a>
+					</p>
+						<a class="button contacts-button" href="#">
 							Напишите нам
-						</button>
-					</address>
-	   			</div>
-				<div class="map-wrap">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533216!2d30.320858716006118!3d59.93871648187625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2sby!4v1614328871250!5m2!1sru!2sby" class="map" width="1440" height="416" allowfullscreen title=" Офис191186, Санкт-Петербург,ул. Б. Конюшенная, д. 19/8">
-					</iframe>
-				</div>
-			</section>
-			<section class="socials">
-				<div class="container">
-		   			<h2 class="visually-hidden">
-						Контактная информация<!--Спрятать  !-->
-					</h2> 
-					<div class="footer-socials-wrap">
-						<ul class="footer-socials-list">
-							<li class="footer-socials-item">
-								<a class="footer-socials-link link-1" href="#">
-									<span class="visually-hidden">
-										ВКонтакте
-									</span>	
-								</a>
-							</li>
-							<li class="footer-socials-item">
-								<a class="footer-socials-link link-2" href="#">
-									<span class="visually-hidden">
-										Фейсбук
-									</span>	
-								</a>
-							</li>
-							<li class="footer-socials-item">
-								<a class="footer-socials-link link-3" href="#">
-									<span class="visually-hidden">
-										Инстаграм
-									</span>
-								</a>
-							</li>
-						</ul>
-						<div class="footer-info-box">
-							<p class="footer-text">
-								Давайте дружить, это выгодно!
-							</p>
-							<p class="footer-info">
-								Скидка 10% для друзей из социальных сетей.
-							</p>
-						</div>
-					</div>			
-		   		</div>
-			</section>	
-		</footer>
-		<section class="modal modal-form">
-			
-				<h2 class="popup-title">
-					Напишите нам
-				</h2>
-				<button class="popup-button-close">
-				</button>
-				<form class="form-popup" action="#" method="post">
-					
-					<p class="popup-item">
-						<label for="modal-name">
-							Ваше имя:
-						</label>
-						<input id="modal-name" type="text" name="name" placeholder="Имя Фамилия" required>
-					</p>
-					<p class="popup-item">
-						<label for="modal-mail">
-							Ваш email:
-						</label>
-						<input id="modal-mail" type="email" name="mail" placeholder="email@example.com" required>
-					</p>
-					<p class="popup-item popup-item-textarea">
-						<label for="modal-text">
-							Текст письма:
-						</label>
-						<textarea name="modal-text" id="modal-text" cols="30" rows="4" placeholder="В свободной форме" required=""></textarea>
-					</p>
-					<button class="button button-modal" type="submit" aria-label="Закрыть">
-						Отправить
-					</button>
-				</form>
-			
+						</a>
+				</address>
+	   		</div>
+	   		<div class="map-interaktive">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533216!2d30.320858716006118!3d59.93871648187625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2sby!4v1614328871250!5m2!1sru!2sby" class="map" width="1440" height="416" allowfullscreen title=" Офис191186, Санкт-Петербург,ул. Б. Конюшенная, д. 19/8">
+				</iframe>
+			</div>
 		</section>
-  </body>
+		<section class="socials">
+			<div class="container">
+		   		<h2 class="visually-hidden">
+					Контакты в соцсетях<!--Спрятать  !-->
+				</h2> 
+				<div class="footer-socials-wrap">
+					<ul class="footer-socials-list">
+						<li class="footer-socials-item">
+							<a class="footer-socials-link link-1" href="#">
+								<span class="visually-hidden">
+									ВКонтакте
+								</span>	
+							</a>
+						</li>
+						<li class="footer-socials-item">
+							<a class="footer-socials-link link-2" href="#">
+								<span class="visually-hidden">
+									Фейсбук
+								</span>	
+							</a>
+						</li>
+						<li class="footer-socials-item">
+							<a class="footer-socials-link link-3" href="#">
+								<span class="visually-hidden">
+									Инстаграм
+								</span>
+							</a>
+						</li>
+					</ul>
+					<div class="footer-info-box">
+						<p class="footer-text">
+							Давайте дружить, это выгодно!
+						</p>
+						<p class="footer-info">
+							Скидка 10% для друзей из социальных сетей.
+						</p>
+					</div>
+				</div>			
+		   	</div>
+		</section>	
+	</footer>   			
+	<section class="modal modal-form">
+		<h2 class="popup-title">
+			Напишите нам
+		</h2>
+		<button class="popup-button-close">
+		</button>
+		<form class="form-popup" action="#" method="post">
+			<p class="popup-item">
+				<label for="modal-name">
+					Ваше имя:
+				</label>
+				<input id="modal-name" type="text" name="name" placeholder="Имя Фамилия" required pattern="[а-яА-Я]+">
+			</p>
+			<p class="popup-item">
+				<label for="modal-mail">
+					Ваш email:
+				</label>
+				<input id="modal-mail" type="email" name="mail" placeholder="email@example.com" required>
+			</p>
+			<p class="popup-item popup-item-textarea">
+				<label for="modal-text">
+					Текст письма:
+				</label>
+				<textarea name="modal-text" id="modal-text" cols="30" rows="4" placeholder="В свободной форме" required>
+				</textarea>
+			</p>
+			<button class="button button-modal" type="submit" aria-label="Закрыть">
+				Отправить
+			</button>
+		</form>	
+	</section>
+</body>
 </html>
