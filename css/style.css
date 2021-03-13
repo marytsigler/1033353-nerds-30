@@ -380,6 +380,7 @@ img{
 	text-decoration: none;
 	text-transform: uppercase;
 	text-align: center;
+	transition: 0.4s ease-in-out;
 }
 .button:hover{
 	background-color: var(--main-accent-hover);
@@ -613,19 +614,21 @@ img{
 	padding-bottom: 54px;
 	padding-top: 54px;
 }
-.address-wrap{
-	position: relative;
-	z-index: 1;
-}
+
 .footer-contacts{
-	width: 319px;
-	padding: 48px 50px;
-	background-color:var(--basic-text-white);
-	font-style: normal;
-	font-size: 16px;
-	line-height: 18px;
-	color: var(--basic-text-light);
+    position: relative;
+    width: 319px;
+    padding: 48px 50px;
+    background-color: var(--basic-text-white);
+    font-style: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: var(--basic-text-light);
+   	left: 50%;
+    transform: translateX(-580px);
+    z-index: 2;
 }
+
 .map-interaktive{
 	position: absolute;
 	width: 100%;
@@ -662,7 +665,7 @@ img{
 	margin: 0;
 	margin-bottom:38px;
 }
-.footer-contacts-phone{
+.footer-phone-info a[href^="tel:"]{
 	text-decoration: none;
 	color: var(--basic-text-light);
 	margin:0;
@@ -766,7 +769,7 @@ img{
 
 /* МОДАЛЬНОЕ ОКНО */
 
-.modal{
+.modal-form{
 	position: fixed;
 	width: 960px;
 	background-color: var(--basic-text-white);
@@ -778,6 +781,9 @@ img{
 	display: none;
 	z-index: 2;
 	}
+.modal-form-show{
+	display: block;
+}
 .form-popup{
 	position: relative;
 	display: flex;
@@ -1038,9 +1044,8 @@ img{
 }
 .filter-label{
 	position: relative;
-	display: block;
+	display: inline-block;
 	cursor: pointer;
-
 	padding-left: 37px;
 	line-height: 20px;
 }
@@ -1051,7 +1056,7 @@ img{
 	top: -2px; 
 	width: 25px;
 	height: 25px;
-	background-image: url(../img/radio-on.png);
+	background-image: url(../img/radio-on.svg);
 	background-repeat: no-repeat;
 	opacity: 0.4;
 }
@@ -1063,7 +1068,7 @@ img{
 	top: -2px; 
 	width: 25px;
 	height: 25px;
-	background-image: url(../img/radio-off.png);
+	background-image: url(../img/radio-off.svg);
 	background-repeat: no-repeat;
 	opacity: 0.4;
 }
@@ -1075,7 +1080,7 @@ img{
 	top: -2px; 
 	width: 25px;
 	height: 23px;
-	background-image: url(../img/checkbox-on.png);
+	background-image: url(../img/checkbox-on.svg);
 	background-repeat: no-repeat;
 	opacity: 0.4;
 }
@@ -1087,41 +1092,32 @@ img{
 	top: -2px; 
 	width: 25px;
 	height: 23px;
-	background-image: url(../img/checkbox-off.png);
+	background-image: url(../img/checkbox-off.svg);
 	background-repeat: no-repeat;
 	opacity: 0.4;
 }
 .filter-input-radio:checked + .filter-label:hover::before{
 	opacity: 1;
-
 }
 .filter-input-radio + .filter-label:hover::before{
 	opacity: 1;
-
 }
-
+.filter-input-checkbox:checked + .filter-label:hover::before{
+	opacity: 1;
+}
+.filter-input-checkbox + .filter-label:hover::before{
+	opacity: 1;
+}
 .filter-input-radio:disabled + .filter-label {
     opacity: 0.3;
     pointer-events: none;
     cursor: default;
 }
-
-
 .filter-input-checkbox:disabled + .filter-label{
     opacity: 0.3;
     pointer-events: none;
     cursor: default;
 }
-
-.filter-input-checkbox:checked + .filter-label:hover::before{
-	opacity: 1;
-
-}
-.filter-input-checkbox + .filter-label:hover::before{
-	opacity: 1;
-
-}
-
 .filter-sort{
 	display: flex;
 	align-items: center;
@@ -1138,7 +1134,7 @@ img{
 	margin: 0;
 	margin-right: 47px;
 	list-style-type: none;
-	max-width: 271px;
+	max-width: 350px;
 }
 .filter-sort-item{
 	margin-right: 25px;
@@ -1169,10 +1165,10 @@ img{
 	color: var(--basic-text-black);
 	cursor: pointer;
 	width: 260px;
+	transition: 0.4s ease-in-out;
 }
 .button-grey:hover{
 	background-color: var(--show-button-hover);
-	transition: 0.4s ease-in-out;
 }
 .button-grey:active{
 	background-color:var(--show-button-aktive);
@@ -1194,6 +1190,7 @@ img{
     border-left: 5px solid transparent;
     color:var(--basic-text-black);
     opacity: 0.3;
+    transition: 0.4s ease-in-out;
 }
 .direction-icon-down{
 	transform: rotate(180deg);
@@ -1208,7 +1205,7 @@ img{
 
 .direction-icon:hover{
 	opacity: 0.6;
-	transition: 0.4s ease-in-out;
+
 }
 .direction-icon:active{
 	opacity: 1;
@@ -1229,6 +1226,7 @@ img{
 .catalog-item{
 	position: relative; /*позиция? */
 	border-radius: 5px;
+	transition: 0.4s ease-in-out;
 }
 .catalog-item::before{
 	position: absolute;
@@ -1238,19 +1236,17 @@ img{
 	top: 0; 
 	width: 360px;
 	height: 40px;
-	background-image: url(../img/browser.png);
+	background-image: url(../img/browser.svg);
 	background-repeat: no-repeat;
 	opacity: 0.12;
 }
 .catalog-item:hover{
 	box-shadow: 0px 6px 15px rgba(0, 1, 1, 0.25);
-	transition: 0.4s ease-in-out;
 }
 .catalog-item:hover::before{
 	opacity: 1;
 	transition: 0.4s ease-in-out;
 }
-
 .catalog-pict{
 	display: block;
 	object-fit: contain;
@@ -1271,22 +1267,26 @@ img{
 	padding:27px 60px 44px;
 	border-radius:0px 0px 5px 5px;
 	opacity: 0;
+	overflow: auto;
+    max-height: 580px;
+    transition: 0.4s ease-in-out;
 }
 .catalog-item:hover .catalog-card{
 	opacity: 1;
-	transition: 0.4s ease-in-out;
 }
 .title-card{
 	margin-bottom: 12px;
+	line-height: 25px;
 }
 .catalog-card-link{
 	text-decoration: none;
 	color:var(--basic-text-black);
 	margin-bottom: 12px;
+	transition: 0.4s ease-in-out;
 }
 .catalog-card-link:hover{
 	color:var(--main-accent-normal);
-	transition: 0.4s ease-in-out;
+
 }
 .catalog-card-link:active{
 	color: rgba(0,0,0,0.3);
@@ -1297,8 +1297,7 @@ img{
 	margin-bottom: 33px;
 	line-height: 18px;
 	color: var(--card-text);
-	overflow: hidden;
-    max-height: 36px;
+	
 	
 }
 
@@ -1335,10 +1334,11 @@ img{
 	border-radius: 3px;
 	text-transform: uppercase;
 	background-color:var(--pagination-background-normal);
+	transition: 0.4s ease-in-out;
 }
 .pagination-button:hover{
 	background-color:var(--pagination-background-hover);
-	transition: 0.4s ease-in-out;
+	
 }
 .pagination-button:active{
 	background-color:var(--pagination-background-active);
