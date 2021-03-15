@@ -275,7 +275,7 @@ img {
 	content:"";
 	width: 760px;
 	min-height: 431px;
-	background-image: url(../img/nerds-index-slide2.png); 
+	background-image: url(../img/nerds-index-slide2.png) no-repeat; 
 	top: 0; 
 	left: 397px;
 }
@@ -285,7 +285,7 @@ img {
 	content:"";
 	width: 760px;
 	min-height: 431px;
-	background-image: url(../img/nerds-index-slide3.png); 
+	background-image: url(../img/nerds-index-slide3.png) no-repeat; 
 	top: 0; 
 	left: 397px;
 }
