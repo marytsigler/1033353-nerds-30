@@ -873,17 +873,17 @@ img {
 .popup-item textarea:focus {
 	border:2px solid var(--basic-text-black);
 }
+.popup-item input:invalid:not(:placeholder-shown) {
+	border: 2px solid var(--input-error);
+	color: var(--main-accent-normal);
+}
+.popup-item textarea:invalid:not(:placeholder-shown) {
+	border: 2px solid var(--input-error);
+	color: var(--main-accent-normal);
+}
 .button-modal {
 	cursor: pointer;
 	width: 259px;
-}
-.popup-item input:invalid:required:not(:placeholder-shown) {
-	border: 2px solid var(--input-error);
-	color: var(--main-accent-normal);
-}
-.popup-item textarea:invalid:required:not(:placeholder-shown) {
-	border: 2px solid var(--input-error);
-	color: var(--main-accent-normal);
 }
 
 /* КАТАЛОГ */
