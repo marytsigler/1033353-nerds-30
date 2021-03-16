@@ -1,9 +1,9 @@
 const contactsButton = document.querySelector(".contacts-button");/*находит кнопку по которой открывается попап*/
 const modalForm = document.querySelector(".modal-form");/*само модальное окно - секция в HTML*/
 const popupClose = modalForm.querySelector(".popup-button-close");
-const formPopup = modalForm.querySelector("formPopup");/*Форма */
-const modalUser = modalForm.querySelector(".modal-user");/*Инпут Имя*/
-const modalEmail = modalForm.querySelector(".modal-email");/*Инпут Емэйл*/
+const form = modalForm.querySelector("form");/*Форма */
+const modalUser = modalForm.querySelector("[name=name]");/*Инпут Имя*/
+const modalEmail = modalForm.querySelector("[name=mail]");/*Инпут Емэйл*/
 
 let isStorageSupport = true;
 let storage = "";
@@ -36,12 +36,12 @@ popupClose.addEventListener("click", function(evt){
 	modalForm.classList.remove("modal-form-show");/*отключает класс - закрывает форму*/
 });
 
-formPopup.addEventListener("submit", function(evt){
-	if (!modalUser.value || !modalEmail.value) {
+form.addEventListener("submit", function(evt){
+	if (!name.value || !mail.value) {
 		evt.preventDefault();
 	} else {
 		if (isStorageSupport) {
-			localStorage.setItem("name", modalUser.value);/*сохраняет имя*/
+			localStorage.setItem("name", name.value);/*сохраняет имя*/
 		}	
 	}
 });
