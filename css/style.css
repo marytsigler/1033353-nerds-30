@@ -1070,26 +1070,14 @@ img {
 	background-repeat: no-repeat;
 	opacity: 0.4;
 }
-.filter-input-radio:checked + .filter-label:hover::before {
-	opacity: 1;
-}
-.filter-input-radio + .filter-label:hover::before {
-	opacity: 1;
-}
-.filter-input-checkbox:checked + .filter-label:hover::before{
-	opacity: 1;
-}
-.filter-input-checkbox + .filter-label:hover::before{
-	opacity: 1;
-}
-
-/* Фокус на форме радио и чекбокс */
-
+.filter-input-radio:hover + .filter-label::before,
 .filter-input-radio:focus + .filter-label::before {
-	border:2px solid var(--basic-text-black);
+	opacity: 1;
 }
+
+.filter-input-checkbox:hover + .filter-label::before,
 .filter-input-checkbox:focus + .filter-label::before {
-	border:2px solid var(--basic-text-black);
+	opacity: 1;
 }
 .filter-input-radio:disabled + .filter-label {
     opacity: 0.3;
