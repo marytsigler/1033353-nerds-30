@@ -759,6 +759,8 @@ img {
 }
 .modal-form-show {
 	display: block;
+	animation: zoomIn;
+	animation-duration: 1s;
 }
 .form-popup {
 	position: relative;
@@ -1314,4 +1316,14 @@ img {
 	box-shadow:inset 0px 0px 0px 3px var(--pagination-border);
 	background: rgba(0, 0, 0, 0.0001);
 	color:var(--basic-text-black);
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
