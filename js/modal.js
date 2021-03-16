@@ -45,14 +45,3 @@ formPopup.addEventListener("submit", function(evt){
 		}	
 	}
 });
-
-/*Закрывает форму при нажатии esc*/
-
-window.addEventListener("keydown", function(evt){
-	if (evt.keyCode === 27) {
-		if (modalForm.classList.contains("modal-form-show")) {
-			evt.preventDefault();
-			modalForm.classList.remove("modal-form-show");
-		}
-	}
-});
