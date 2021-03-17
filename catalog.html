@@ -22,7 +22,7 @@
 
 		<!--CSS</!-->
 
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style.min.css">
 	</head>
 	<body class="page-body">
 	  	<header class="main-header">
@@ -375,7 +375,7 @@
 					<label for="modal-name">
 						Ваше имя:
 					</label>
-					<input id="modal-name" class="modal-user" type="text" name="name" placeholder="Имя Фамилия" required>
+					<input id="modal-name" class="modal-user" type="text" name="name" minlength="3" maxlength="10" placeholder="Имя Фамилия" required>
 				</p>
 				<p class="popup-item">
 					<label for="modal-mail">
@@ -394,6 +394,6 @@
 				</button>
 			</form>
 		</section>
-		<script src="js/modal.js"></script>
+		<script src="js/modal.min.js"></script>
 	</body>
 </html>

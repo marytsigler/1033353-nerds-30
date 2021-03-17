@@ -1,9 +1,9 @@
 const contactsButton = document.querySelector(".contacts-button");/*находит кнопку по которой открывается попап*/
 const modalForm = document.querySelector(".modal-form");/*само модальное окно - секция в HTML*/
 const popupClose = modalForm.querySelector(".popup-button-close");
-const form = modalForm.querySelector("form");/*Форма */
-const modalUser = modalForm.querySelector("[name=name]");/*Инпут Имя*/
-const modalEmail = modalForm.querySelector("[name=mail]");/*Инпут Емэйл*/
+const formPopup = modalForm.querySelector(".form-popup");/*Форма */
+const modalUser = modalForm.querySelector(".modal-user");/*Инпут Имя*/
+const modalEmail = modalForm.querySelector(".modal-email");/*Инпут Емэйл*/
 
 let isStorageSupport = true;
 let storage = "";
@@ -15,14 +15,13 @@ try	{
 }
 
 /*Открывает форму*/
-
 contactsButton.addEventListener("click", function(evt){
 	evt.preventDefault();	/*отключает переход на другую страницу*/
 	modalForm.classList.add("modal-form-show");/*показывает форму*/
 
 	if (storage) {
 		modalUser.value	= storage;
-		modalEmail = focus();
+		modalEmail.focus();
 	}
 	else{
 		modalUser.focus();/*фокус при открытии модального окна в поле ввода логина.*/
@@ -30,18 +29,32 @@ contactsButton.addEventListener("click", function(evt){
 });
 
 /*Закрывает форму*/
-
 popupClose.addEventListener("click", function(evt){
 	evt.preventDefault();/*отключает переход на другую страницу	*/
 	modalForm.classList.remove("modal-form-show");/*отключает класс - закрывает форму*/
+	modalForm.classList.remove("modal-form-error");
 });
 
-form.addEventListener("submit", function(evt){
-	if (!name.value || !mail.value) {
+formPopup.addEventListener("submit", function(evt){
+	if (!modalUser.value || !modalEmail.value) {
 		evt.preventDefault();
+		modalForm.classList.remove("modal-form-error");
+		modalForm.offsetWidth = modalForm.offsetWidth;
+		modalForm.classList.add("modal-form-error");
+
 	} else {
 		if (isStorageSupport) {
-			localStorage.setItem("name", name.value);/*сохраняет имя*/
+			localStorage.setItem("name", modalUser.value);/*сохраняет имя*/
 		}	
 	}
+});
+
+window.addEventListener("keydown", function (evt) {
+  if (evt.keyCode === 27) {
+    if (modalForm.classList.contains("modal-form-show")) {
+      evt.preventDefault();
+      modalForm.classList.remove("modal-form-show");
+      modalForm.classList.remove("modal-form-error");
+    }
+  }
 });
