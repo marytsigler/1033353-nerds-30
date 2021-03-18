@@ -265,7 +265,7 @@ img {
 	content:"";
 	width: 760px;
 	min-height: 431px;
-	background: url(../img/nerds-index-slide1.png) no-repeat;
+	background: var(--background-normal) url(../img/nerds-index-slide1.png) no-repeat;
 	top: 0; 
 	left: 397px;
 }
@@ -275,7 +275,7 @@ img {
 	content:"";
 	width: 760px;
 	min-height: 431px;
-	background-image: url(../img/nerds-index-slide2.png) no-repeat; 
+	background-image: var(--background-normal) url(../img/nerds-index-slide2.png) no-repeat; 
 	top: 0; 
 	left: 397px;
 }
@@ -285,7 +285,7 @@ img {
 	content:"";
 	width: 760px;
 	min-height: 431px;
-	background-image: url(../img/nerds-index-slide3.png) no-repeat; 
+	background-image: var(--background-normal) url(../img/nerds-index-slide3.png) no-repeat; 
 	top: 0; 
 	left: 397px;
 }
@@ -995,7 +995,7 @@ img {
 	justify-content: space-between;
 }
 .price-controls label {
-	font-family: 'Roboto','Arial', sans-serif;
+	font-family: "Roboto","Arial", sans-serif;
 	font-size: 16px;
 	line-height: 22px;
 	text-transform: uppercase;
@@ -1043,8 +1043,7 @@ img {
 	top: -2px; 
 	width: 25px;
 	height: 25px;
-	background-image: url(../img/radio-on.svg);
-	background-repeat: no-repeat;
+	background: url(../img/radio-on.svg) no-repeat;
 	opacity: 0.4;
 }
 .filter-input-radio + .filter-label:before {
@@ -1055,8 +1054,7 @@ img {
 	top: -2px; 
 	width: 25px;
 	height: 25px;
-	background-image: url(../img/radio-off.svg);
-	background-repeat: no-repeat;
+	background: url(../img/radio-off.svg) no-repeat;
 	opacity: 0.4;
 }
 .filter-input-checkbox:checked + .filter-label::before {
@@ -1067,8 +1065,7 @@ img {
 	top: -2px; 
 	width: 25px;
 	height: 23px;
-	background-image: url(../img/checkbox-on.svg);
-	background-repeat: no-repeat;
+	background: url(../img/checkbox-on.svg) no-repeat;
 	opacity: 0.4;
 }
 .filter-input-checkbox + .filter-label::before {
@@ -1079,8 +1076,7 @@ img {
 	top: -2px; 
 	width: 25px;
 	height: 23px;
-	background-image: url(../img/checkbox-off.svg);
-	background-repeat: no-repeat;
+	background: url(../img/checkbox-off.svg) no-repeat;
 	opacity: 0.4;
 }
 .filter-input-radio:hover + .filter-label::before,
@@ -1215,8 +1211,7 @@ img {
 	top: 0; 
 	width: 360px;
 	height: 40px;
-	background-image: url(../img/browser.svg);
-	background-repeat: no-repeat;
+	background: url(../img/browser.svg) no-repeat;
 	opacity: 0.12;
 }
 .catalog-item:hover {
